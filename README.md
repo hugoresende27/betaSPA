@@ -1,0 +1,2 @@
+- course : https://www.udemy.com/course/master-laravel-6-with-vuejs-fullstack-development
+- find php.ini file on mac : php -i | grep 'php.ini'
