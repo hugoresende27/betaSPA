@@ -10,3 +10,5 @@
  1. `npm install @inertiajs/vue3`
 
 use npm run dev
+
+- docs inertia 1.0 : https://inertiajs.com/upgrade-guide
