@@ -3,6 +3,10 @@
         Index
     </div>
     <Link href="/hello">Show Page</Link>
+
+    <div>
+        The message is {{ message }}
+    </div>
 </template>
 
 <script setup>
@@ -11,5 +15,11 @@
     // setInterval(() => counter.value++ , 1000)
 
     import {Link} from '@inertiajs/vue3'
+
+    defineProps(
+        {
+            message : String
+        }
+    )
     
 </script>
