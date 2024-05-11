@@ -1,12 +1,15 @@
 <template>
-    <div>
-        Index
-    </div>
-    <Link href="/hello">Show Page</Link>
+  
+        <div>
+            Index
+        </div>
+   
 
-    <div>
-        The message is {{ message }}
-    </div>
+        <div>
+            The message is {{ message }}
+        </div>
+
+
 </template>
 
 <script setup>
@@ -15,6 +18,7 @@
     // setInterval(() => counter.value++ , 1000)
 
     import {Link} from '@inertiajs/vue3'
+    import MainLayout from '../../Layouts/MainLayout.vue';
 
     defineProps(
         {
@@ -23,3 +27,11 @@
     )
     
 </script>
+
+<!-- <script>
+    REPLACED IN app.js BY    page.default.layout = page.default.layout || MainLayout
+    import MainLayout from '../../Layouts/MainLayout.vue';
+    export default {
+        layout : MainLayout
+    }
+</script> -->
