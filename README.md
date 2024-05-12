@@ -13,3 +13,5 @@ use npm run dev
 
 - docs inertia 1.0 : https://inertiajs.com/upgrade-guide
 - docs vue : https://vuejs.org/guide/introduction.html
+
+- check db with artisan : `php artisan db:show`
