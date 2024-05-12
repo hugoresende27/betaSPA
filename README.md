@@ -1,4 +1,5 @@
 - course : https://www.udemy.com/course/master-laravel-6-with-vuejs-fullstack-development
+- git : https://github.com/piotr-jura-udemy/master-laravel-vue-fullstack/tree/master
 - find php.ini file on mac : `php -i | grep 'php.ini'`
 - installing Vue : `npm install --save-dev @vitejs/plugin-vue`
 - inertia docs : https://inertiajs.com/
