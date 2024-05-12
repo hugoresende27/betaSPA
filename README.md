@@ -16,3 +16,5 @@ use npm run dev
 - docs vue : https://vuejs.org/guide/introduction.html
 
 - check db with artisan : `php artisan db:show`
+- `php artisan migrate:status`
+- mySql datatypes docs : https://dev.mysql.com/doc/refman/8.0/en/data-types.html
