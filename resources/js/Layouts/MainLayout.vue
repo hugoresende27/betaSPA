@@ -1,9 +1,10 @@
 <template>
         <Link href="/hello">Show Page</Link> &nbsp;
-        <Link href="/">Index Page</Link>
+        <Link href="/">Index Page</Link> &nbsp;
+        <Link href="/listing">Listing</Link>
         <div>The page with time {{ timer }}</div>
 
-        <slot>Default</slot>
+        <slot></slot>
 </template>
 
 
