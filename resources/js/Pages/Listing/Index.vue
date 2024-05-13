@@ -2,13 +2,10 @@
   
     <div v-for="listing in listings" :key="listing.id">
         <Link :href="`\\listing\\${listing.id}`">
-            {{ listing.id }} -
-            {{ listing.city }} -
-            {{ listing.area }} - 
-            {{ listing.street }} - 
-            {{ listing.street_nr }} - 
-            {{ listing.price }} - 
-            {{ listing.beds }} 
+  
+
+            <ListingAddress :listing="listing" />
+            
         </Link>
         
     </div>
@@ -21,6 +18,8 @@
 
 import {Link} from '@inertiajs/vue3';
 
+import ListingAddress from '@/Components/ListingAddress.vue';
+// import ListingAddress from '../../Components/ListingAddress.vue';
 defineProps(
     {
         listings : Array
