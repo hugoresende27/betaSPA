@@ -12,6 +12,11 @@
                 <button>Edit</button>
             </Link>
         </div>
+        <div>
+            <Link :href="`\\listing\\${listing.id}`" method="DELETE">
+                <button>Delete</button>
+            </Link>
+        </div>
        
         
     </div>

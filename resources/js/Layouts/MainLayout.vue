@@ -9,6 +9,9 @@
             <!-- {{ page.props.flash.success }} -->
             {{ flashSuccess}}
         </div>
+        <div v-if="page.props.flash.danger" class="warning">
+            {{ flashDanger}}
+        </div>
 
         <div>
             {{ y }}
@@ -34,6 +37,9 @@
     const flashSuccess = computed( () => 
         page.props.flash.success
     );
+    const flashDanger = computed( () => 
+        page.props.flash.danger
+    );
 
     const x = ref(0);
     const y = computed( () => x.value * 2);
@@ -46,6 +52,10 @@
 
     .success {
         background-color: green;
+        color: white;
+    }
+    .warning {
+        background-color: blue;
         color: white;
     }
 </style>
