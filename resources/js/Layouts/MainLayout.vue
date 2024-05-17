@@ -6,7 +6,12 @@
         <!-- <div>The page with time {{ timer }}</div> -->
 
         <div v-if="page.props.flash.success" class="success">
-            {{ page.props.flash.success }}
+            <!-- {{ page.props.flash.success }} -->
+            {{ flashSuccess}}
+        </div>
+
+        <div>
+            {{ y }}
         </div>
 
 
@@ -18,12 +23,21 @@
 
     import {Link, usePage} from '@inertiajs/vue3'
     import {ref} from 'vue'
+    import {computed} from 'vue';
 
-    const timer = ref(0)
+    // const timer = ref(0)
     // setInterval(() => timer.value++, 1000)
 
-    //page.props.value.flash.success
+    //page.props.flash.success
     const page = usePage();
+
+    const flashSuccess = computed( () => 
+        page.props.flash.success
+    );
+
+    const x = ref(0);
+    const y = computed( () => x.value * 2);
+
 
 </script>
 

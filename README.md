@@ -18,3 +18,5 @@ use npm run dev
 - check db with artisan : `php artisan db:show`
 - `php artisan migrate:status`
 - mySql datatypes docs : https://dev.mysql.com/doc/refman/8.0/en/data-types.html
+- vue computed properties : https://vuejs.org/guide/essentials/computed.html#computed-properties
+- laravel validation form rules : https://laravel.com/docs/11.x/validation#available-validation-rules
