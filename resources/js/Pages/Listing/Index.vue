@@ -13,8 +13,8 @@
             </Link>
         </div>
         <div>
-            <Link :href="`\\listing\\${listing.id}`" method="DELETE">
-                <button>Delete</button>
+            <Link :href="`\\listing\\${listing.id}`" method="DELETE" as="button">
+                <span>Delete</span>
             </Link>
         </div>
        
