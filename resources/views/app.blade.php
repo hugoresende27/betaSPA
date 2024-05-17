@@ -6,6 +6,7 @@
 
         <title>{{ env('APP_NAME') ?? 'betaSPA'}}</title>
 
+        @routes
         @vite('resources/js/app.js')
         @inertiaHead
 

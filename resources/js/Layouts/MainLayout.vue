@@ -1,8 +1,8 @@
 <template>
         <Link href="/hello">Show Page</Link> &nbsp;
         <Link href="/">Index Page</Link> &nbsp;
-        <Link href="/listing">Listing</Link> &nbsp;
-        <Link href="/listing/create">New Listing</Link>
+        <Link :href="route('listing.index')">Listing</Link> &nbsp;
+        <Link :href="route('listing.create')">New Listing</Link>
         <!-- <div>The page with time {{ timer }}</div> -->
 
         <div v-if="page.props.flash.success" class="success">

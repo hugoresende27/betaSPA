@@ -20,3 +20,15 @@ use npm run dev
 - mySql datatypes docs : https://dev.mysql.com/doc/refman/8.0/en/data-types.html
 - vue computed properties : https://vuejs.org/guide/essentials/computed.html#computed-properties
 - laravel validation form rules : https://laravel.com/docs/11.x/validation#available-validation-rules
+- for routes with ziggy and js : `composer require tightenco/ziggy`
+- docs ziggy routing : https://github.com/tighten/ziggy
+
+- Side Notes
+- dissertations to Gemini : 
+ - can you say that in php everything can be an array in a class or even an object...but in javascript everything is an object ? im saying this because using ziggy in a laravel project i notice that passing multiple parameters in a route can be done using an object, but i have an idea that in php this is done by using an array, even so passing props to a view Vue is done using objects but in laravel php views blade you can do this using an array...what do you know about this ??
+ Laravel leverages arrays for data passing, while Vue components use objects (props).
+ Arrays: Ordered collections of key-value pairs (associative arrays) or numerically indexed lists. Arrays are flexible and can hold various data types (strings, integers, booleans, other arrays, etc.). In Laravel, you use arrays extensively for passing data to views, route parameters, validation rules, etc.
+Objects: Represent real-world entities with properties (data) and methods (functions). While technically anything can be converted to an object in PHP, it's not as ubiquitous as in JavaScript.
+Here's an analogy:
+JavaScript: Objects are like Legos. You can build anything by combining them.
+PHP: Objects are like specialized tools in a toolbox. You use them for specific tasks alongside other tools like arrays.
