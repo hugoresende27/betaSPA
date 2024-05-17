@@ -22,6 +22,7 @@ use npm run dev
 - laravel validation form rules : https://laravel.com/docs/11.x/validation#available-validation-rules
 - for routes with ziggy and js : `composer require tightenco/ziggy`
 - docs ziggy routing : https://github.com/tighten/ziggy
+- use ziggy for routing with Inertia
 
 - Side Notes
 - dissertations to Gemini : 
