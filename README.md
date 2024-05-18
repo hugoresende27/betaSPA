@@ -23,6 +23,13 @@ use npm run dev
 - for routes with ziggy and js : `composer require tightenco/ziggy`
 - docs ziggy routing : https://github.com/tighten/ziggy
 - use ziggy for routing with Inertia
+- tailwind docs : https://tailwindcss.com/docs/installation
+- install tailwind : `npm install -D tailwindcss postcss autoprefixer` and `npx tailwindcss init`
+- tailwind forms : `npm install -D @tailwindcss/forms` ; docs : https://github.com/tailwindlabs/tailwindcss-forms
+
+
+
+
 
 - Side Notes
 - dissertations to Gemini : 
