@@ -26,6 +26,7 @@ use npm run dev
 - tailwind docs : https://tailwindcss.com/docs/installation
 - install tailwind : `npm install -D tailwindcss postcss autoprefixer` and `npx tailwindcss init`
 - tailwind forms : `npm install -D @tailwindcss/forms` ; docs : https://github.com/tailwindlabs/tailwindcss-forms
+- tailwind container css docs : https://tailwindcss.com/docs/container#using-the-container 
 
 
 
