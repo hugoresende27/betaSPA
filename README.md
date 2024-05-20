@@ -27,8 +27,7 @@ use npm run dev
 - install tailwind : `npm install -D tailwindcss postcss autoprefixer` and `npx tailwindcss init`
 - tailwind forms : `npm install -D @tailwindcss/forms` ; docs : https://github.com/tailwindlabs/tailwindcss-forms
 - tailwind container css docs : https://tailwindcss.com/docs/container#using-the-container 
-
-
+- composables : In Vue.js 3, composables are reusable functions that encapsulate logic and stateful behavior, leveraging the power of the Composition API. They provide a way to organize your code into smaller, more manageable units that can be shared and reused across different components in your application.
 
 
 
