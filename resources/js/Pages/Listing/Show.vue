@@ -44,11 +44,39 @@
                     <input v-model.number="duration" type="range" min="3" max="25" step="1"
                         class="w-full h-4 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/>
                     
-                    <div class="text-gray-600 dark:text-gray-500 mt-2">
+                    <div class="text-gray-600  mt-2">
                         <div class="text-gray-400">
                             Your monthly payment 
                         </div>
                         <Price :price="monthlyPayment" class="text-3xl" />
+
+                    </div>
+
+                    <div class="text-gray-600 dark:text-gray-500 mt-2">
+                        <div class="flex justify-between">
+
+                            <div>Total Paid</div>
+                            <div>
+                                <Price :price="totalPaid" class="font-medium" />
+                            </div>
+                            
+                        </div>
+                        <div class="flex justify-between">
+
+                            <div>Listing Price</div>
+                            <div>
+                                <Price :price="listing.price" class="font-medium" />
+                            </div>
+                            
+                        </div>
+                        <div class="flex justify-between">
+
+                            <div>Total Interest</div>
+                            <div>
+                                <Price :price="totalInterest" class="font-medium" />
+                            </div>
+                            
+                        </div>
 
                     </div>
                 
@@ -92,6 +120,6 @@ const props = defineProps(
 //     }
 // )
 
-const {monthlyPayment} = useMonthlyPayment(props.listing.price, interestRate, duration);
+const {monthlyPayment, totalPaid, totalInterest} = useMonthlyPayment(props.listing.price, interestRate, duration);
 
 </script>
