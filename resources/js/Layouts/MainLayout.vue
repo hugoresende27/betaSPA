@@ -15,10 +15,23 @@
                 <div class="text-xl ftext-indigo-600 dark:text-indigo-300 font-bold text-center">
                     <Link :href="route('index')">betaSPA</Link>
                 </div>
-                <div>
+                <div class="flex items-center gap-4" v-if="user">
+                    <div class="text-sm text-gray-500 dark:text-gray-800">
+                        {{ user.name }}
+                    </div>
+
                     <Link :href="route('listing.create')"
                             class="btn-primary"
-                            >+ New Listing</Link>
+                            >+ New Listing
+                    </Link>
+
+                    <div>
+                        Logout
+                    </div>
+
+                </div>
+                <div v-else>
+                    <Link :href="route('login')">Sign-In</Link>
                 </div>
             
             </nav>
@@ -75,6 +88,11 @@
 
     const x = ref(0);
     const y = computed( () => x.value * 2);
+
+
+    const user = computed(
+        () => page.props.user
+    )
 
 
 </script>
