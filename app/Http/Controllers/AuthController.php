@@ -8,6 +8,12 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
+
+
+
+
+
+    protected $redirectTo = '/listing';
     public function create()
     {
         return inertia('Auth/Login');

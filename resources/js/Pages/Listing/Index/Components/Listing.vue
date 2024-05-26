@@ -9,7 +9,8 @@
                 <div  class="flex items-center gap-1">
                     <Price :price="listing.price" class="text-2xl font-bold"/>
                     <div class="text-xs text-gray-500"></div>
-                        <Price :price="monthlyPayment"/> per month
+                        <Price :price="monthlyPayment"/>
+                        <span class="hidden lg:block xl:block"> p/m </span>
                 </div>
   
                 <ListingAddress :listing="listing" />

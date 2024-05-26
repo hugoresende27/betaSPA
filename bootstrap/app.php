@@ -14,6 +14,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             HandleInertiaRequests::class,
         ]);
+
+         // Add middleware to the 'api' group
+        $middleware->api(append: [
+            // Your API middleware class(es) here
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
