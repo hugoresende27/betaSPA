@@ -24,7 +24,7 @@ class UserAccountController extends Controller
         ]));
 
         // $user->password = Hash::make($user->password);
-        // $user->save();
+        // $user->save(); //if used make, did not store like create
 
         Auth::login($user);
 
