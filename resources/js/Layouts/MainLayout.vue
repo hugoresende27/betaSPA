@@ -25,8 +25,12 @@
                             >+ New Listing
                     </Link>
 
+
                     <div>
-                        Logout
+                        <Link :href="route('logout')"
+                        class="" method="delete" as="button">
+                            Logout
+                        </Link>
                     </div>
 
                 </div>
