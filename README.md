@@ -32,6 +32,9 @@ use npm run dev
 
 
 - Side Notes
+
+- camelCase -> kebab_case
+
 - dissertations to Gemini : 
  - can you say that in php everything can be an array in a class or even an object...but in javascript everything is an object ? im saying this because using ziggy in a laravel project i notice that passing multiple parameters in a route can be done using an object, but i have an idea that in php this is done by using an array, even so passing props to a view Vue is done using objects but in laravel php views blade you can do this using an array...what do you know about this ??
  Laravel leverages arrays for data passing, while Vue components use objects (props).
