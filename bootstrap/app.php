@@ -19,6 +19,14 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(append: [
             // Your API middleware class(es) here
         ]);
+
+        //this prevents 419 expired when logout without token, no csrf token need in except
+        $middleware->validateCsrfTokens(except: [
+            // 'stripe/*',
+            // 'http://example.com/foo/bar',
+            // 'http://example.com/foo/*',
+            '/logout'
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
