@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     // $this->middleware('auth')->except(['index', 'show']);//not in laravel 11
-    // }
+    public function __construct()
+    {
+        // $this->middleware('auth')->except(['index', 'show']);//not in laravel 11
+        // $this->authorizeResource(Listing::class, 'listing');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -28,6 +30,10 @@ class ListingController extends Controller
      */
     public function create()
     {
+        
+       if ( Auth::user()->cannot('create', Listing::class)) {
+        abort(403);
+       }; 
         return inertia('Listing/Create');
     }
 
@@ -51,7 +57,8 @@ class ListingController extends Controller
         // ]);
 
         //OR the same
-        Listing::create(
+        // Listing::create( 
+        $request->user()->listings()->create( //to create the listing with the user_id key
             $request->validate([
                 'beds' => 'required|integer|min:0|max:20',
                 'baths' => 'required|integer|min:1|max:20',
@@ -74,6 +81,13 @@ class ListingController extends Controller
      */
     public function show(Listing $listing)
     {
+
+       if ( Auth::user()->cannot('view', $listing)) {
+        abort(403);
+       }; //from ListingPolicy method  view
+
+
+
         return inertia('Listing/Show',
         [
             'listing' => $listing
