@@ -16,18 +16,22 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@test.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'teste@teste.com',
+        //     'is_admin' => true
+        // ]);
 
-        User::factory()->create([
-            'name' => 'Test2 User',
-            'email' => 'test2@test.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test2 User',
+        //     'email' => 'test2@test.com',
+        // ]);
 
-        Listing::factory(20)->create([
+        Listing::factory(15)->create([
             'by_user_id' => 1
+        ]);
+        Listing::factory(15)->create([
+            'by_user_id' => 2
         ]);
     }
 }

@@ -21,7 +21,7 @@ class ListingController extends Controller
     {
         return inertia('Listing/Index',
         [
-            'listings' => Listing::all()
+            'listings' => Listing::orderByDesc('created_at')->paginate(10)
         ]);
     }
 
@@ -30,10 +30,12 @@ class ListingController extends Controller
      */
     public function create()
     {
-        
-       if ( Auth::user()->cannot('create', Listing::class)) {
-        abort(403);
-       }; 
+        if (Auth::user()) {
+            if ( Auth::user()->cannot('create', Listing::class)) {
+                abort(403);
+            }; 
+        }
+      
         return inertia('Listing/Create');
     }
 
@@ -81,10 +83,13 @@ class ListingController extends Controller
      */
     public function show(Listing $listing)
     {
+        if (Auth::user()) {
 
-       if ( Auth::user()->cannot('view', $listing)) {
-        abort(403);
-       }; //from ListingPolicy method  view
+            if ( Auth::user()->cannot('view', $listing)) {
+                abort(403);
+               }; //from ListingPolicy method  view
+        }
+
 
 
 
@@ -99,10 +104,18 @@ class ListingController extends Controller
      */
     public function edit(Listing $listing)
     {
-        return inertia('Listing/Edit',
-        [
-            'listing' => $listing
-        ]);
+        if (Auth::user()) {
+            if ( Auth::user()->can('update', $listing)) {
+                return inertia('Listing/Edit',
+                [
+                    'listing' => $listing
+                ]);
+            
+            } else {
+                abort(403);
+            }; 
+        }
+       
     }
     /**
      * Update the specified resource in storage.
@@ -133,8 +146,17 @@ class ListingController extends Controller
      */
     public function destroy(Listing $listing)
     {
-        $listing->delete();
-        return redirect()->back()
-            ->with('danger', 'Listing was deleted!');
+        if (Auth::user()) {
+            if ( Auth::user()->can('delete', $listing)) {
+               
+                $listing->delete();
+                return redirect()->back()
+                    ->with('danger', 'Listing was deleted!');
+            
+            } else {
+                abort(403);
+            }; 
+        }
+    
     }
 }

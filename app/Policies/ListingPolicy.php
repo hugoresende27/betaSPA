@@ -10,12 +10,30 @@ use Illuminate\Auth\Access\Response;
 class ListingPolicy
 {
     use HandlesAuthorization;
+
+
+    /**
+     * [Description for before]
+     *
+     * @param User|null $user
+     * @param mixed $ability
+     * 
+     * @return [type]
+     * overwrite every rules, check if is_admin
+     */
+    public function before(?User $user, $ability)
+    {
+        return $user?->is_admin ;
+        // if ($user->is_admin && $ability == 'update') {
+        //     return true;
+        // }
+    }
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -23,7 +41,7 @@ class ListingPolicy
      */
     public function view(User $user, Listing $listing): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -31,7 +49,7 @@ class ListingPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -39,7 +57,7 @@ class ListingPolicy
      */
     public function update(User $user, Listing $listing): bool
     {
-        //
+        return $user->id == $listing->by_user_id;
     }
 
     /**
@@ -47,7 +65,7 @@ class ListingPolicy
      */
     public function delete(User $user, Listing $listing): bool
     {
-        //
+        return $user->id == $listing->by_user_id;
     }
 
     /**
@@ -55,7 +73,7 @@ class ListingPolicy
      */
     public function restore(User $user, Listing $listing): bool
     {
-        //
+        return $user->id == $listing->by_user_id;
     }
 
     /**
@@ -63,6 +81,6 @@ class ListingPolicy
      */
     public function forceDelete(User $user, Listing $listing): bool
     {
-        //
+        return $user->id == $listing->by_user_id;
     }
 }
